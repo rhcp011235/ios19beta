@@ -257,6 +257,33 @@ h1 {
     font-size: 0.98rem;
     padding: 0.8rem;
   }
+  .container {
+    padding: 1rem 0.5rem;
+  }
+  .share-buttons {
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+  }
+  .share-buttons a, .share-buttons button, .card, .calendar-link a {
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card {
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin-bottom: 0.8rem;
+  }
+  .calendar-link {
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @keyframes fadeIn {
@@ -352,15 +379,9 @@ h1 {
   background: linear-gradient(90deg, #d7dde8, #757f9a);
 }
 
-@media (max-width: 600px) {
-  .share-buttons {
-    flex-direction: column;
-    gap: 0.5em;
-  }
-  .share-buttons a, .share-buttons button {
-    width: 100%;
-    min-width: unset;
-  }
+.share-buttons a, .share-buttons button {
+  margin-bottom: 0.5em;
+  font-size: 1.08em;
 }
 
 .qr-modal {
@@ -565,4 +586,15 @@ body.light-mode .calendar-link a {
 @keyframes bodyFadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+.card {
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+}
+
+.calendar-link a {
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  font-size: 1.08em;
 }
