@@ -89,9 +89,28 @@ h1 {
 }
 
 .social-share a {
-  color: #0a84ff;
+  display: inline-block;
+  background: linear-gradient(90deg, #232526, #414345);
+  color: #fff !important;
+  padding: 0.7em 1.7em;
+  border-radius: 8px;
+  font-weight: bold;
   text-decoration: none;
-  font-weight: 500;
+  font-size: 1.05em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  margin: 0.5em auto 0 auto;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.social-share a:focus {
+  box-shadow: 0 0 0 3px #0a84ff55;
+}
+
+.social-share a:hover {
+  background: linear-gradient(90deg, #414345, #232526);
+  transform: translateY(-2px) scale(1.03);
+  text-decoration: none;
 }
 
 .apple-footer {
@@ -242,4 +261,218 @@ h1 {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: none; }
+}
+
+.share-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7em;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.share-buttons a,
+.share-buttons button {
+  display: inline-block;
+  min-width: 90px;
+  background: linear-gradient(90deg, #232526, #414345);
+  color: #fff !important;
+  padding: 0.7em 1.2em;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.share-buttons a:focus, .share-buttons button:focus {
+  box-shadow: 0 0 0 3px #0a84ff55;
+}
+
+.share-buttons a:hover, .share-buttons button:hover {
+  background: linear-gradient(90deg, #414345, #232526);
+  transform: translateY(-2px) scale(1.03);
+  text-decoration: none;
+}
+
+.share-buttons a[aria-label*="Facebook"] {
+  background: linear-gradient(90deg, #1877f2, #4e69a2);
+}
+.share-buttons a[aria-label*="Facebook"]:hover {
+  background: linear-gradient(90deg, #4e69a2, #1877f2);
+}
+
+.share-buttons a[aria-label*="WhatsApp"] {
+  background: linear-gradient(90deg, #25d366, #128c7e);
+}
+.share-buttons a[aria-label*="WhatsApp"]:hover {
+  background: linear-gradient(90deg, #128c7e, #25d366);
+}
+
+.share-buttons a[aria-label*="LinkedIn"] {
+  background: linear-gradient(90deg, #0077b5, #005983);
+}
+.share-buttons a[aria-label*="LinkedIn"]:hover {
+  background: linear-gradient(90deg, #005983, #0077b5);
+}
+
+.share-buttons a[aria-label*="Reddit"] {
+  background: linear-gradient(90deg, #ff5700, #ff9068);
+}
+.share-buttons a[aria-label*="Reddit"]:hover {
+  background: linear-gradient(90deg, #ff9068, #ff5700);
+}
+
+.share-buttons a[aria-label*="Email"] {
+  background: linear-gradient(90deg, #6dd5ed, #2193b0);
+}
+.share-buttons a[aria-label*="Email"]:hover {
+  background: linear-gradient(90deg, #2193b0, #6dd5ed);
+}
+
+.share-buttons button#copy-link {
+  background: linear-gradient(90deg, #0a84ff, #0071e3);
+  color: #fff;
+}
+.share-buttons button#copy-link:hover {
+  background: linear-gradient(90deg, #0071e3, #0a84ff);
+}
+
+.share-buttons button#print-page {
+  background: linear-gradient(90deg, #757f9a, #d7dde8);
+  color: #222;
+}
+.share-buttons button#print-page:hover {
+  background: linear-gradient(90deg, #d7dde8, #757f9a);
+}
+
+@media (max-width: 600px) {
+  .share-buttons {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  .share-buttons a, .share-buttons button {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+.qr-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+}
+.qr-modal[style*="display: flex"] {
+  display: flex !important;
+}
+.qr-modal-content {
+  background: #18181a;
+  color: #fff;
+  padding: 2em 2em 1.5em 2em;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  text-align: center;
+  position: relative;
+  min-width: 260px;
+}
+.close-qr {
+  position: absolute;
+  top: 0.7em;
+  right: 1em;
+  font-size: 2em;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.close-qr:hover {
+  color: #ff5e62;
+}
+
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  background: linear-gradient(90deg, #0a84ff, #0071e3);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+#back-to-top:hover, #back-to-top:focus {
+  background: linear-gradient(90deg, #0071e3, #0a84ff);
+  transform: translateY(-3px) scale(1.08);
+}
+
+/* Tooltip styles */
+.share-buttons a[title], .share-buttons button[title] {
+  position: relative;
+}
+.share-buttons a[title]:hover::after, .share-buttons button[title]:hover::after,
+.share-buttons a[title]:focus::after, .share-buttons button[title]:focus::after {
+  content: attr(title);
+  position: absolute;
+  left: 50%;
+  bottom: 120%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 0.35em 0.8em;
+  border-radius: 6px;
+  font-size: 0.95em;
+  white-space: nowrap;
+  opacity: 0.95;
+  pointer-events: none;
+  z-index: 10;
+}
+@media (max-width: 600px) {
+  #back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+  }
+  .qr-modal-content {
+    min-width: 0;
+    width: 90vw;
+    padding: 1.2em 0.5em 1em 0.5em;
+  }
+}
+
+.share-buttons a .icon-x, .share-buttons a .icon-facebook, .share-buttons a .icon-whatsapp, .share-buttons a .icon-linkedin, .share-buttons a .icon-reddit, .share-buttons a .icon-email, .share-buttons a .icon-telegram, .share-buttons a .icon-messenger, .share-buttons button .icon-qr, .share-buttons button .icon-copy, .share-buttons button .icon-print {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5em;
+  transition: transform 0.25s cubic-bezier(.4,2.08,.55,.44), opacity 0.25s cubic-bezier(.4,2.08,.55,.44);
+  opacity: 0.85;
+}
+.share-buttons a:hover .icon-x, .share-buttons a:focus .icon-x,
+.share-buttons a:hover .icon-facebook, .share-buttons a:focus .icon-facebook,
+.share-buttons a:hover .icon-whatsapp, .share-buttons a:focus .icon-whatsapp,
+.share-buttons a:hover .icon-linkedin, .share-buttons a:focus .icon-linkedin,
+.share-buttons a:hover .icon-reddit, .share-buttons a:focus .icon-reddit,
+.share-buttons a:hover .icon-email, .share-buttons a:focus .icon-email,
+.share-buttons a:hover .icon-telegram, .share-buttons a:focus .icon-telegram,
+.share-buttons a:hover .icon-messenger, .share-buttons a:focus .icon-messenger,
+.share-buttons button:hover .icon-qr, .share-buttons button:focus .icon-qr,
+.share-buttons button:hover .icon-copy, .share-buttons button:focus .icon-copy,
+.share-buttons button:hover .icon-print, .share-buttons button:focus .icon-print {
+  transform: scale(1.25) rotate(-8deg);
+  opacity: 1;
 }
