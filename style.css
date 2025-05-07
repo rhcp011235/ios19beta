@@ -1,0 +1,73 @@
+body {
+  background-color: #0d0d0d;
+  color: #b3cfff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  text-align: center;
+  max-width: 600px;
+  margin: 5rem auto;
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  display: inline-block;
+  background: linear-gradient(to right, #ff8a00, #e52e71);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.countdown div {
+  background: #111;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.countdown span {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #6baaff;
+}
+
+.countdown small {
+  display: block;
+  color: #999;
+}
+
+.card {
+  background: #2a2a2a;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  max-width: 300px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
